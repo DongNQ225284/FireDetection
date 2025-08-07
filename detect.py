@@ -2,7 +2,7 @@ from ultralytics import YOLO # type: ignore
 import cv2
 
 # Load mô hình
-model = YOLO("runs/detect/train/weights/best.pt")
+model = YOLO("best.pt")
 
 cap = cv2.VideoCapture(0)
 
