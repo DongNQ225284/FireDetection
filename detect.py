@@ -4,14 +4,14 @@ import cv2
 # Load mô hình
 model = YOLO("best.pt")
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 while True:
     ret, frame = cap.read()
     if not ret:
         break
 
-    results = model.predict(source=frame, show=False, conf=0.5)
+    results = model.predict(source=frame, show=False, conf=0.45, verbose = False)
 
     annotated_frame = results[0].plot()
 
