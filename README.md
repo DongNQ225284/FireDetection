@@ -267,15 +267,11 @@ Model tốt nhất thu được `best_v2_2.pt`
 
 ![Quá trình train trên tập Fire_indoor_data_v2 không Early stopping](Result/results_v2_2.png)
 
-`Loss (train/val)`: các loại loss (box, cls, dfl) trên tập train giảm đều và tiến gần bão hòa. Validation loss dao động nhưng giảm ổn định, không có dấu hiệu diverge, cho thấy mô hình học lâu hơn và hội tụ tốt hơn so với huấn luyện ngắn.
-
-`Precision`: duy trì ổn định quanh mức ~0.82–0.85, cao hơn so với mô hình dừng sớm, chứng tỏ tỷ lệ báo động giả đã giảm.
-
-`Recall`: đạt ~0.75–0.78, cũng cao hơn so với khi Early stopping, nghĩa là mô hình bắt được nhiều trường hợp cháy hơn.
-
-`mAP@0.5`: đạt mức ~0.85, khá tốt và cải thiện rõ rệt so với v2 dừng sớm.
-
-`mAP@0.5–0.95`: đạt khoảng ~0.47–0.49, thể hiện khả năng định vị bounding box chính xác hơn.
+- `Loss (train/val)`: các loại loss (box, cls, dfl) trên tập train giảm đều và tiến gần bão hòa. Validation loss dao động nhưng giảm ổn định, không có dấu hiệu diverge, cho thấy mô hình học lâu hơn và hội tụ tốt hơn so với huấn luyện ngắn.
+- `Precision`: duy trì ổn định quanh mức ~0.82–0.85, cao hơn so với mô hình dừng sớm, chứng tỏ tỷ lệ báo động giả đã giảm.
+- `Recall`: đạt ~0.75–0.78, cũng cao hơn so với khi Early stopping, nghĩa là mô hình bắt được nhiều trường hợp cháy hơn.
+- `mAP@0.5`: đạt mức ~0.85, khá tốt và cải thiện rõ rệt so với v2 dừng sớm.
+- `mAP@0.5–0.95`: đạt khoảng ~0.47–0.49, thể hiện khả năng định vị bounding box chính xác hơn.
 
 Nhìn chung, mô hình không dùng Early stopping cho kết quả tốt hơn rõ rệt cả về `Precision`, `Recall` và `mAP`, phù hợp hơn để triển khai trong bài toán phát hiện cháy.
 
