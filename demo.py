@@ -7,12 +7,12 @@ INDEX_CAM = 1
 
 cap = cv2.VideoCapture(INDEX_CAM)
 
-model = YOLO("best.pt")
+model = YOLO("Model/best_v2_2.pt")
 while True:
     ret, frame = cap.read()
     if not ret:
         break
-    results = model.predict(source=frame, show=False, conf=0.45, verbose = False)
+    results = model.predict(source=frame, show=False, conf=0.6, verbose = False)
     annotated_frame = results[0].plot()
     cv2.imshow("Fire Detection", annotated_frame)
     for r in results:
