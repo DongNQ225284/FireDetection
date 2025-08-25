@@ -95,9 +95,7 @@ Project sử dụng YOLOv11n, đây là phiên bản nano trong dòng YOLOv11, �
 ### Lý do lựa chọn YOLOv11n cho project này:
 
 - Đảm bảo tốc độ real-time khi chạy trên camera giám sát indoor.
-
 - Dung lượng nhỏ, dễ triển khai trên thiết bị hạn chế tài nguyên (Jetson, Raspberry Pi, camera IP có GPU tích hợp).
-
 - Đủ chính xác để đánh giá và chứng minh tính khả thi của hệ thống phát hiện cháy tự động.
 
 ## Bước 3: Huấn luyện
@@ -201,18 +199,21 @@ Với:
 
 - Trả lời cho câu hỏi: Trong số tất cả các vật thể thực sự có trong ảnh, mô hình dự đoán đúng được bao nhiêu?
 - Chỉ số này càng cao càng tốt
-  $$
-  Recall = \frac{TP}{TP + FN}
-  $$
-  Với:
-  - $TP$ (True Positive): Dự đoán đúng vật thể
-  - $FN$ (False Negative): Mô hình dự đoán không có vật thể có trong ảnh, nhưng thực tế là có
+
+$$
+Recall = \frac{TP}{TP + FN}
+$$
+
+Với:
+
+- $TP$ (True Positive): Dự đoán đúng vật thể
+- $FN$ (False Negative): Mô hình dự đoán không có vật thể có trong ảnh, nhưng thực tế là có
 
 #### **mAP@0.5 - Mean Average Precision (IoU 0.5)**
 
-- IoU (Intersection over Union): Tỉ lệ chồng lấp giữa box dự đoán và box thực tế.
-- mAP@0.5 nghĩa là chỉ cần IoU ≥ 0.5 (50% chồng lấp) là chấp nhận là đúng.
-- mAP (mean average precision): trung bình của average precision qua các lớp và các ngưỡng confidence.
+- `IoU` (Intersection over Union): Tỉ lệ chồng lấp giữa box dự đoán và box thực tế.
+- `mAP@0.5` nghĩa là chỉ cần IoU ≥ 0.5 (50% chồng lấp) là chấp nhận là đúng.
+- `mAP` (mean average precision): trung bình của average precision qua các lớp và các ngưỡng confidence.
 - Chỉ số này càng cao tức mô hình dự đoán vị trí của các box càng đúng
 
 #### **mAP@0.5:0.95 – Trung bình AP từ IoU 0.5 đến 0.95**
