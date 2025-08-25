@@ -224,7 +224,7 @@ Với:
 
 Model tốt nhất thu được `best_v1_1.pt`
 
-![Quá trình train trên tập Fire_indoor_data_v1 có Early stopping](runs/detect/train_v1.1/results.png)
+![Quá trình train trên tập Fire_indoor_data_v1 có Early stopping](Result/results_v1_1.png)
 
 - `Loss (train/val)`: cả 3 loại loss (box, cls, dfl) đều giảm đều và tiến gần trạng thái bão hòa, không có dấu hiệu diverge. Validation loss dao động nhưng nhìn chung theo xu hướng giảm, chứng tỏ mô hình học ổn định trong giai đoạn ngắn.
 - `Precision`: tăng dần và đạt mức ổn định quanh ~0.78–0.80, phản ánh mô hình ít báo động giả.
@@ -236,7 +236,7 @@ Model tốt nhất thu được `best_v1_1.pt`
 
 Model tốt nhất thu được `best_v1_2.pt`
 
-![Quá trình train trên tập Fire_indoor_data_v1 không Early stopping](runs/detect/train_v1.2/results.png)
+![Quá trình train trên tập Fire_indoor_data_v1 không Early stopping](Result/results_v1_2.png)
 
 - `Loss (train/val)`: tất cả các loại loss (box, cls, dfl) đều giảm ổn định và tiến gần trạng thái bão hòa sau ~200 epoch. Không thấy dấu hiệu diverge hay overfitting nghiêm trọng, chứng tỏ quá trình học ổn định.
 - `Precision`: đạt mức ổn định quanh ~0.82–0.85, khá tốt, nghĩa là mô hình ít báo động giả.
@@ -250,7 +250,7 @@ Model tốt nhất thu được `best_v1_2.pt`
 
 Model tốt nhất thu được `best_v2_1.pt`
 
-![Quá trình train trên tập Fire_indoor_data_v2 có Early stopping](runs/detect/train_v1.1/results.png)
+![Quá trình train trên tập Fire_indoor_data_v2 có Early stopping](Result/results_v2_1.png)
 
 - `Loss (train/val)`: các loại loss (box, cls, dfl) đều giảm ổn định theo số epoch, không có dấu hiệu diverge. Validation loss dao động nhưng nhìn chung giảm theo xu hướng, cho thấy mô hình học tốt và không bị overfitting nghiêm trọng.
 - `Precision`: tăng dần và đạt mức ổn định quanh ~0.75–0.78, thấp hơn một chút so với tập v1, nghĩa là tỷ lệ báo động giả còn có thể xuất hiện.
@@ -264,7 +264,7 @@ Nhìn chung, so với v1, mô hình trên tập v2 có `Recall` tương tự nh�
 
 Model tốt nhất thu được `best_v2_2.pt`
 
-![Quá trình train trên tập Fire_indoor_data_v2 không Early stopping](runs/detect/train_v1.2/results.png)
+![Quá trình train trên tập Fire_indoor_data_v2 không Early stopping](Result/results_v2_2.png)
 
 `Loss (train/val)`: các loại loss (box, cls, dfl) trên tập train giảm đều và tiến gần bão hòa. Validation loss dao động nhưng giảm ổn định, không có dấu hiệu diverge, cho thấy mô hình học lâu hơn và hội tụ tốt hơn so với huấn luyện ngắn.
 
