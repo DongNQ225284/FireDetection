@@ -9,19 +9,6 @@ Project này trình bày hướng dẫn sử dụng YOLO để phát hiện đá
 - **Những nhãn xuất hiện là gì?**
 - **Nguồn ảnh cần như thế nào?**
 
-### Xây dựng nhãn
-
-**Nhãn được sử dụng trong Project:**
-
-**Version 1**
-
-1. `fire`: cháy thật.
-
-**Version 2**
-
-1. `fire`: cháy thật.
-2. `non-fire`: các đối tượng dễ bị nhầm thành lửa.
-
 ### Thu thập dữ liệu
 
 #### Chất lượng dữ liệu
@@ -54,16 +41,24 @@ Nguồn ảnh được lấy trên [Roboflow Universe](https://universe.roboflow
 
 #### **Kết quả thực hiện**
 
-**Version 1: [Fire Indoor v1](https://universe.roboflow.com/nguyen-dong-ys7mf/fire-indoor-3rnk5/dataset/3)**
-| Nhãn | Số lượng nhãn |
-|------|---------------|
-|`fire`| 1499 |
+### [Fire Indoor v1](https://universe.roboflow.com/nguyen-dong-ys7mf/fire-indoor-3rnk5/dataset/3)
 
-**Version 2: [Fire Indoor v2](https://universe.roboflow.com/nguyen-dong-ys7mf/fire-indoor-3rnk5/dataset/2)**
-| Nhãn | Số lượng nhãn |
-|------|---------------|
-|`fire`| 1499 |
-|`non-fire`| 702 |
+| Nhãn   | Số lượng nhãn | Ý nghĩa   |
+| ------ | ------------- | --------- |
+| `fire` | 1499          | Cháy thật |
+
+### [Fire Indoor v2](https://universe.roboflow.com/nguyen-dong-ys7mf/fire-indoor-3rnk5/dataset/2)
+
+| Nhãn       | Số lượng nhãn | Ý nghĩa               |
+| ---------- | ------------- | --------------------- |
+| `fire`     | 1499          | Cháy thật             |
+| `non-fire` | 702           | Dễ bị nhầm thành cháy |
+
+### [Fire Indoor v3](https://universe.roboflow.com/nguyen-dong-ys7mf/fire-indoor-3rnk5/dataset/4)
+
+| Nhãn   | Số lượng nhãn | Ý nghĩa   |
+| ------ | ------------- | --------- |
+| `fire` | 11888         | Cháy thật |
 
 ## Bước 2: Kiến trúc model
 
@@ -275,6 +270,21 @@ Model tốt nhất thu được `best_v2_2.pt`
 
 Nhìn chung, mô hình không dùng Early stopping cho kết quả tốt hơn rõ rệt cả về `Precision`, `Recall` và `mAP`, phù hợp hơn để triển khai trong bài toán phát hiện cháy.
 
+### Train trên tập Fire_indoor_data_v3 không Early stopping
+
+Model tốt nhất thu được `best_v3.pt`
+
+![Quá trình train trên tập Fire_indoor_data_v3 không Early stopping](Result/results_v3.png)
+
+- `Loss (train/val)`: Các loại loss (box, cls, dfl) trên tập train đều giảm ổn định và tiến dần đến trạng thái bão hòa. Trên tập validation, loss cũng giảm đều và dao động nhẹ nhưng không có dấu hiệu diverge. Điều này cho thấy mô hình học tốt, hội tụ ổn định và không có hiện tượng overfitting rõ rệt.
+
+- `Precision`: đạt mức ổn định quanh ~0.83–0.85, chứng tỏ tỷ lệ báo động giả giảm và mô hình phân loại chính xác hơn.
+- `Recall`: duy trì trong khoảng ~0.75–0.80, nghĩa là mô hình bắt được nhiều trường hợp mục tiêu hơn, cải thiện so với mô hình huấn luyện ngắn/early stopping.
+- `mAP@0.5`: đạt mức ~0.90, rất cao và cho thấy mô hình phát hiện đối tượng tốt ở ngưỡng IoU 0.5.
+- `mAP@0.5–0.95`: đạt khoảng ~0.53–0.55, thể hiện khả năng định vị bounding box khá chính xác, tốt hơn so với mô hình dừng sớm.
+
+Mô hình huấn luyện đủ lâu (không dừng sớm) cho kết quả vượt trội cả về `Precision`, `Recall` và `mAP`. Đây là mô hình ổn định, hội tụ tốt và phù hợp hơn để triển khai trong thực tế cho bài toán phát hiện cháy.
+
 **Bảng metric tóm tắt kết quả model**
 | best weights | Architecture | Precision | Recall | mAP@0.5 | mAP@0.5-0.9 |
 | ------------ | ------------ | --------- | ------ | ------- | ----------- |
@@ -282,8 +292,9 @@ Nhìn chung, mô hình không dùng Early stopping cho kết quả tốt hơn r�
 |`best_v1_2.pt`| YOLOv11n | 0.823466| 0.790294 | 0.868791| 0.485459 |
 |`best_v2_1.pt`| YOLOv11n | 0.899261| 0.734727 | 0.847251| 0.492445 |
 |`best_v2_2.pt`| YOLOv11n | 0.916785| 0.764316 | 0.85817 | 0.512319 |
+| `best_v3.pt` | YOLOv11n | 0.852691| 0.78232 |0.873176 | 0.551144 |
 
-Kết quả train khá ổn, từ kết quả trên ta có thể thấy phiên bản `best_v2_2.pt` là tốt nhất.
+Kết quả train khá ổn, từ kết quả trên ta có thể thấy phiên bản `best_v3.pt` là ổn định nhất về chỉ số `Precision` và `Recall`.
 
 ## Bước 5: Demo
 
@@ -345,4 +356,4 @@ Recall cao nghĩa là: model ít bỏ sót đám cháy. Nếu Recall thấp, t�
 
 **5. Huấn luyện lâu hơn hoặc fine-tuning với dataset mở rộng:**
 
-- Nếu Recall thấp do underfitting, có thể cần tăng số epoch hoặc mở rộng tập train.
+- Nếu `Recall` thấp do underfitting, có thể cần tăng số epoch hoặc mở rộng tập train.

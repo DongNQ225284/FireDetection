@@ -3,8 +3,8 @@ from ultralytics import YOLO  # type: ignore
 if __name__ == "__main__":
     model = YOLO("Model/yolo11n.pt")
     model.train(
-        data="Data/Fire_indoor_data_v1/data.yaml",  # file dataset
-        batch=4,                                    # giảm batch khi tăng imgsz
+        data="Data/Fire_indoor_data_v3/data.yaml",  # file dataset
+        batch=16,                                   # giảm batch khi tăng imgsz
         epochs=300,                                 # fine-tune thêm
         imgsz=416,                                  # tăng độ phân giải ảnh
         lr0=0.001,                                  # learning rate nhỏ hơn
