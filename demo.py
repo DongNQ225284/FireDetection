@@ -5,9 +5,12 @@ INDEX_CAM = 1
 # 1: Sử dụng camera từ điện thoại thông qua ứng dụng ivCam
 # 0: Sử dụng camera từ máy tính
 
-cap = cv2.VideoCapture(INDEX_CAM)
+url = "rtsp://admin:ECSIAQ@192.168.168.85:554/stream"
 
-model = YOLO("Model/best_v2_2.pt")
+cap = cv2.VideoCapture(url)
+# cap = cv2.VideoCapture(INDEX_CAM)
+
+model = YOLO("Model/best_v3.pt")
 while True:
     ret, frame = cap.read()
     if not ret:

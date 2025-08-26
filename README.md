@@ -120,6 +120,8 @@ Mỗi dòng trong file `.txt` tương ứng với 1 object:
 
 Trong folder của dự án file `train.py` chứa code để train mô hình. Cần config tham số truyền vào (hyperparameter): learning rate, batch size, epoch, optimizer, ....
 
+file `train.py`
+
 ```python
 from ultralytics import YOLO  # type: ignore
 
@@ -144,6 +146,8 @@ if __name__ == "__main__":
         copy_paste=0.1
     )
 ```
+
+Tuy nhiên, cách train này rất "hại" máy, chúng ta có thể train bằng `Google Colab`, tham khảo cách train [ở đây](https://colab.research.google.com/drive/1NDHaymymJekRf3b7W0CALdABdu8k1Gqm?usp=sharing)
 
 | Nhóm                  | Hyperparameter    | Ý nghĩa                    |
 | --------------------- | ----------------- | -------------------------- |
