@@ -7,7 +7,6 @@ INDEX_CAM = 1
 
 url = "rtsp://admin:ECSIAQ@192.168.168.85:554/stream"
 
-# cap = cv2.VideoCapture(url)
 cap = cv2.VideoCapture(INDEX_CAM)
 
 model = YOLO("Model/best_v3.pt")
