@@ -7,9 +7,9 @@ INDEX_CAM = 1
 
 url = "rtsp://admin:ECSIAQ@192.168.168.85:554/stream"
 
-cap = cv2.VideoCapture(INDEX_CAM)
+cap = cv2.VideoCapture(1)
 
-model = YOLO("Model/best_v3.pt")
+model = YOLO("Model/best_v4.pt")
 while True:
     ret, frame = cap.read()
     if not ret:
