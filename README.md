@@ -150,7 +150,7 @@ if __name__ == "__main__":
 Tuy nhiên, cách train này rất "hại" máy, những cách sau được khuyến khích:
 
 - Train bằng `Google Colab`, tham khảo cách train [ở đây](https://colab.research.google.com/drive/1NDHaymymJekRf3b7W0CALdABdu8k1Gqm?usp=sharing).
-- Train bằng `Kaggle`, tham khảo cách train [ở đây](https://www.kaggle.com/code/dongnq247/train-model-to-detection-fire-indoor)
+- Train bằng `Kaggle`, tham khảo cách train [ở đây](https://www.kaggle.com/code/dongnq247/train-model-to-detect-fire-indoor)
 
 **Ý nghĩa các Hyperparameter**
 
