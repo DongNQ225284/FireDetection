@@ -147,7 +147,10 @@ if __name__ == "__main__":
     )
 ```
 
-Tuy nhiên, cách train này rất "hại" máy, chúng ta có thể train bằng `Google Colab`, tham khảo cách train [ở đây](https://colab.research.google.com/drive/1NDHaymymJekRf3b7W0CALdABdu8k1Gqm?usp=sharing)
+Tuy nhiên, cách train này rất "hại" máy, những cách sau được khuyến khích:
+
+- Train bằng `Google Colab`, tham khảo cách train [ở đây](https://colab.research.google.com/drive/1NDHaymymJekRf3b7W0CALdABdu8k1Gqm?usp=sharing).
+- Train bằng `Kaggle`
 
 | Nhóm                  | Hyperparameter    | Ý nghĩa                    |
 | --------------------- | ----------------- | -------------------------- |
