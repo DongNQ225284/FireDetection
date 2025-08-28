@@ -6,6 +6,7 @@ INDEX_CAM = 1
 # 0: Sử dụng camera từ máy tính
 
 url = "rtsp://admin:ECSIAQ@192.168.168.85:554/stream"
+# Sử dụng Camera RTSP
 
 cap = cv2.VideoCapture(1)
 

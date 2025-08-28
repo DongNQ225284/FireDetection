@@ -319,20 +319,33 @@ Model tốt nhất thu được `best_v3.pt`
 
 Mô hình huấn luyện đủ lâu (không dừng sớm) cho kết quả vượt trội cả về `Precision`, `Recall` và `mAP`. Đây là mô hình ổn định, hội tụ tốt và phù hợp hơn để triển khai trong thực tế cho bài toán phát hiện cháy.
 
+### Train trên tập Fire_indoor_data_v4 không Early stopping
+
+![Quá trình train trên tập Fire_indoor_data_v4 không Early stopping](Result/results_v4.png)
+
 **Bảng metric tóm tắt kết quả model**
 | best weights | Architecture | Precision | Recall | mAP@0.5 | mAP@0.5-0.9 |
 | ------------ | ------------ | --------- | ------ | ------- | ----------- |
 |`best_v1_1.pt`| YOLOv11n | 0.84497 | 0.739669 | 0.83807 | 0.430727 |
 |`best_v1_2.pt`| YOLOv11n | 0.823466| 0.790294 | 0.868791| 0.485459 |
 |`best_v2_1.pt`| YOLOv11n | 0.899261| 0.734727 | 0.847251| 0.492445 |
-|`best_v2_2.pt`| YOLOv11n | 0.916785| 0.764316 | 0.85817 | 0.512319 |
-| `best_v3.pt` | YOLOv11n | 0.852691| 0.78232 |0.873176 | 0.551144 |
+|`best_v2_2.pt`| YOLOv11n | **0.916785**| 0.764316 | 0.85817 | 0.512319 |
+| `best_v3.pt` | YOLOv11n | 0.852691| 0.78232 | 0.873176 | 0.551144 |
+| `best_v4.pt` | YOLOv11n | 0.879717| **0.830258**| **0.898737** | **0.595956** |
 
-Kết quả train khá ổn, từ kết quả trên ta có thể thấy phiên bản `best_v3.pt` là ổn định nhất về chỉ số `Precision` và `Recall`.
+Kết quả train khá ổn, từ kết quả trên ta có thể thấy phiên bản `best_v4.pt` là ổn định nhất về chỉ số `Precision`, `Recall` và `mAP`.
 
 ## Bước 5: Demo
 
-Trong Project, file `demo.py` chứa chương trình Demo. Chương trình này, sử dụng camera từ điện thoại để đọc dữ liệu, model sẽ tìm kiếm và phát hiện đám cháy.
+Trong Project, file `demo.py` chứa chương trình Demo.
+Chương trình này cho phép:
+
+- Sử dụng Camera từ điện thoại để đọc ảnh.
+- Sử dụng Camera RTSP để đọc dữ liệu.
+
+Dữ liệu được gửi về máy Local, để tìm kiếm và phát hiện đám cháy.
+
+Web-demo: [Website này](https://huggingface.co/spaces/dongnq247/yolo-web-demo) cho phép upload ảnh, hoặc đường dẫn ảnh, sau đó sẽ trả về kết quả, model được sử dụng là `best_v4.pt`
 
 ## Bước 6: Nâng cao chất lượng model
 

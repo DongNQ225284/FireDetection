@@ -4,6 +4,7 @@
 ├─ [Fire_indoor_data_v1](https://universe.roboflow.com/nguyen-dong-ys7mf/fire-indoor-3rnk5/dataset/3)/  
 ├─ [Fire_indoor_data_v2](https://universe.roboflow.com/nguyen-dong-ys7mf/fire-indoor-3rnk5/dataset/2)/  
 ├─ [Fire_indoor_data_v3](https://universe.roboflow.com/nguyen-dong-ys7mf/fire-indoor-3rnk5/dataset/4)/
+├─ [Fire_indoor_data_v4](https://app.roboflow.com/nguyen-dong-ys7mf/fire_indoor-3xzzi-gynms/2)/
 
 ## Mô tả bộ dữ liệu
 
@@ -25,3 +26,9 @@
 | Nhãn   | Số lượng nhãn | Ý nghĩa   |
 | ------ | ------------- | --------- |
 | `fire` | 11888         | Cháy thật |
+
+### [Fire Indoor v4](https://app.roboflow.com/nguyen-dong-ys7mf/fire_indoor-3xzzi-gynms/2)/
+
+| Nhãn   | Số lượng nhãn | Ý nghĩa   |
+| ------ | ------------- | --------- |
+| `fire` | 10483         | Cháy thật |
