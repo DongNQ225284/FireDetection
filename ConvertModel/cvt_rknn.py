@@ -1,7 +1,7 @@
 import os
 from rknn.api import RKNN  # type: ignore
 
-def cvt_rknn(onnx_path: str, folder_path: str, target_platform: str = "rk3566"):
+def cvt_rknn(onnx_path: str, folder_path: str, target_platform: str = "rk3588"):
     # Tạo thư mục output nếu chưa có
     os.makedirs(folder_path, exist_ok=True)
 
@@ -49,7 +49,7 @@ def cvt_rknn(onnx_path: str, folder_path: str, target_platform: str = "rk3566"):
 
 if __name__ == "__main__":
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    onnx_path = os.path.join(BASE_DIR, "Model", "best_v2_2.onnx")
+    onnx_path = os.path.join(BASE_DIR, "Model", "best_v4.onnx")
     folder_path = os.path.join(BASE_DIR, "Model")
-    target_platform = "rk3566"
+    target_platform = "rk3588"
     cvt_rknn(onnx_path, folder_path, target_platform)

@@ -31,6 +31,6 @@ def create_dataset(data_path, output_file="dataset.txt", num_samples=None):
 
 if __name__ == "__main__":
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    data_path = os.path.join(BASE_DIR, "Data", "Fire_indoor_data_v2", "train", "images")
+    data_path = os.path.join(BASE_DIR, "Data", "Fire_indoor_data_v4", "train", "images")
     output_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dataset.txt")
     create_dataset(data_path, output_file, num_samples=100)

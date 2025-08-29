@@ -47,7 +47,7 @@ def cvt_onnx(model_path: str, folder_path: str):
 
 if __name__ == "__main__":
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    model_path = os.path.join(BASE_DIR, "Model", "best_v2_2.pt")
+    model_path = os.path.join(BASE_DIR, "Model", "best_v4.pt")
     folder_path = os.path.join(BASE_DIR, "Model")
     cvt_onnx(model_path, folder_path)
 

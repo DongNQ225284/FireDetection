@@ -103,6 +103,7 @@ wsl -d Ubuntu-22.04
 - Dưới đây là ví dụ:
 
 ```bash
+cd ~
 cd /mnt/d/ProjectCV/fire_detection/ConvertModel
 ```
 
