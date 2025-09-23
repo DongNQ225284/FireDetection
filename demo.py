@@ -5,9 +5,6 @@ INDEX_CAM = 1
 # 1: Sử dụng camera từ điện thoại thông qua ứng dụng ivCam
 # 0: Sử dụng camera từ máy tính
 
-url = "rtsp://admin:ECSIAQ@192.168.168.85:554/stream"
-# Sử dụng Camera RTSP
-
 cap = cv2.VideoCapture(1)
 
 model = YOLO("Model/best_v4.pt")
