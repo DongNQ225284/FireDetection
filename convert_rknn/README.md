@@ -45,9 +45,6 @@ conda --version
 ### 2. Tải xuống các repo liên quan đến RKNN
 
 ```bash
-# Tạo folder 'convert'
-mkdir convert && cd convert
-
 # Tải repo RKNN optimization for exporting YOLO
 git clone https://github.com/airockchip/ultralytics_yolo11.git --depth 1
 
