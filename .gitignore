@@ -1,5 +1,9 @@
-Data/Fire_indoor_data_v1/
-Data/Fire_indoor_data_v2/
-Data/Fire_indoor_data_v3/
-Data/Fire_indoor_data_v4/
+data/Fire_indoor_data_v1/
+data/Fire_indoor_data_v2/
+data/Fire_indoor_data_v3/
+data/Fire_indoor_data_v4/
 runs/
+
+convert_rknn/rknn_model_zoo/
+convert_rknn/rknn-toolkit2/
+convert_rknn/ultralytics_yolo11/
