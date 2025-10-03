@@ -138,7 +138,7 @@ Host rk3588
 
 Mô hình `.rknn` được sử dụng là mô hình nhận diện lửa, được chuyển đổi từ mô hình `yolo11n.pt`.
 
-Để biết chi tiết cách **chuyển đổi YOLO pt → ONNX → RKNN**, hãy xem tại: [📘 Hướng dẫn Convert](../convert/README.md).
+Để biết chi tiết cách **chuyển đổi YOLO pt → ONNX → RKNN**, hãy xem tại: [📘 Hướng dẫn Convert](../convert_rknn/README.md).
 
 ### 1. Tạo môi trường ảo
 
